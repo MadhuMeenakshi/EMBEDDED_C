@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, j;
+
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    printf("Missing numbers: ");
+
+    for(i = 1; i <= n + 2; i++)
+    {
+        int found = 0;
+
+        for(j = 0; j < n; j++)
+        {
+            if(arr[j] == i)
+            {
+                found = 1;
+                break;
+            }
+        }
+
+        if(!found)
+            printf("%d ", i);
+    }
+
+    return 0;
+}
